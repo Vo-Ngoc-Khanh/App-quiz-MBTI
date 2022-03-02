@@ -5,7 +5,7 @@
 Thành viên nhóm :
 - Võ Ngọc Khánh - 12001048
 - Lê Sĩ Khang - 12001053
-- Nguyễn Phước Tuấn - 1200
+- Nguyễn Phước Tuấn - 12001019
 
 Mô tả app : dựa vào ứng dụng đã được nghiên cứu MBTI khá nổi tiếng để nghiên cứu tính cách của mỗi người độ chính xác đến 80pt, gồm 70 câu hỏi, người dùng có 7-10 phút để hoàn thành phần câu hỏi, sau khi hoàn thành người dùng sẽ thuộc 1 trong 16 nhóm tính cách sau :
  - ISTJ - Người trách nhiệm 
