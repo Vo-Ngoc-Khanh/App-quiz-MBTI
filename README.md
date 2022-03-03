@@ -26,7 +26,7 @@ Mô tả app : dựa vào ứng dụng đã được nghiên cứu MBTI khá n�
  - ESTP - Người thực thi
  
  Tài liệu tham khao để thực hiện dồ án : 
- - tìm thuật toán của mbti
+ - Tìm thuật toán của phương pháp trắc nghiệm mbti 
  - 70 câu hỏi và 16 loại tính cách : topcv.vn
  
  Các giao diện, nhiệm vụ cần làm
