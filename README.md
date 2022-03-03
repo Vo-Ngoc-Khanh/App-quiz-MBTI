@@ -7,7 +7,12 @@ Thành viên nhóm :
 - Lê Sĩ Khang - 12001053
 - Nguyễn Phước Tuấn - 12001019
 
-Mô tả app : dựa vào ứng dụng đã được nghiên cứu MBTI khá nổi tiếng để nghiên cứu tính cách của mỗi người độ chính xác đến 80pt, gồm 70 câu hỏi, người dùng có 7-10 phút để hoàn thành phần câu hỏi, sau khi hoàn thành người dùng sẽ thuộc 1 trong 16 nhóm tính cách sau :
+Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) là một phương pháp sử dụng hàng loạt các câu hỏi trắc nghiệm để phân tích tính cách con người. 
+Kết quả trắc nghiệm MBTI chỉ ra cách con người nhận thức thế giới xung quanh và ra quyết định cho mọi vấn đề trong cuộc sống.Hiện nay MBTI được sử dụng phổ biến như 
+một phương pháp phân loại tính cách khá chính xác. Trong công việc, MBTI giúp chúng ta có thêm thông tin để lựa chọn nghề nghiệp chính xác hơn, với nhà tuyển dụng cũng 
+có thể sử dụng MBTI để đánh giá mức độ phù hợp về tính cách của ứng viên với công việc cũng như môi trường làm việc của doanh nghiệp, gồm 70 câu hỏi, người dùng có 7-10 phút 
+để hoàn thành phần câu hỏi, sau khi hoàn thành người dùng sẽ thuộc 1 trong 16 nhóm tính cách sau :
+
  - ISTJ - Người trách nhiệm 
  - ISFJ - Người nuôi dưỡng 
  - ISFP - Người nghệ sĩ 
@@ -25,14 +30,16 @@ Mô tả app : dựa vào ứng dụng đã được nghiên cứu MBTI khá n�
  - ESTJ - Người giám hộ 
  - ESTP - Người thực thi
  
- Tài liệu tham khao để thực hiện dồ án : 
+ Tài liệu, dữ liệu tham khảo để thực hiện đồ án : 
  - Tìm thuật toán của phương pháp trắc nghiệm mbti 
  - 70 câu hỏi và 16 loại tính cách : topcv.vn
- 
+ - ...
+
  Các giao diện, nhiệm vụ cần làm
- - Thiết kế logo app, tên ngắn gọn của app
- - dùng logo để tạo splash sceen 
- - giao diện home 
- - giao diện hiển thị các câu hỏi
- - giao diện kết quả
- - giao diện lưu kết quả
+ - Thiết kế logo app
+ - Dùng logo để tạo splash sceen 
+ - Giao diện home 
+ - Giao diện hiển thị các câu hỏi
+ - Giao diện kết quả
+ - Giao diện xem kết quả đã thực hiện
+ - Và một số chức năng khác...
