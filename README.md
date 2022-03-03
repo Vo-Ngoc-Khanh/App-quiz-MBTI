@@ -7,11 +7,7 @@ Thành viên nhóm :
 - Lê Sĩ Khang - 12001053
 - Nguyễn Phước Tuấn - 12001019
 
-Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) là một phương pháp sử dụng hàng loạt các câu hỏi trắc nghiệm để phân tích tính cách con người. 
-Kết quả trắc nghiệm MBTI chỉ ra cách con người nhận thức thế giới xung quanh và ra quyết định cho mọi vấn đề trong cuộc sống.Hiện nay MBTI được sử dụng phổ biến như 
-một phương pháp phân loại tính cách khá chính xác. Trong công việc, MBTI giúp chúng ta có thêm thông tin để lựa chọn nghề nghiệp chính xác hơn, với nhà tuyển dụng cũng 
-có thể sử dụng MBTI để đánh giá mức độ phù hợp về tính cách của ứng viên với công việc cũng như môi trường làm việc của doanh nghiệp, gồm 70 câu hỏi, người dùng có 7-10 phút 
-để hoàn thành phần câu hỏi, sau khi hoàn thành người dùng sẽ thuộc 1 trong 16 nhóm tính cách sau :
+Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) là một phương pháp sử dụng hàng loạt các câu hỏi trắc nghiệm để phân tích tính cách con người. Kết quả trắc nghiệm MBTI chỉ ra cách con người nhận thức thế giới xung quanh và ra quyết định cho mọi vấn đề trong cuộc sống.Hiện nay MBTI được sử dụng phổ biến như một phương pháp phân loại tính cách khá chính xác. Trong công việc, MBTI giúp chúng ta có thêm thông tin để lựa chọn nghề nghiệp chính xác hơn, với nhà tuyển dụng cũng có thể sử dụng MBTI để đánh giá mức độ phù hợp về tính cách của ứng viên với công việc cũng như môi trường làm việc của doanh nghiệp, gồm 70 câu hỏi, người dùng có 7-10 phút để hoàn thành phần câu hỏi, sau khi hoàn thành người dùng sẽ thuộc 1 trong 16 nhóm tính cách sau :
 
  - ISTJ - Người trách nhiệm 
  - ISFJ - Người nuôi dưỡng 
@@ -42,5 +38,5 @@ có thể sử dụng MBTI để đánh giá mức độ phù hợp về tính c
  - giao diện hướng dẫn
  - Giao diện hiển thị các câu hỏi
  - Giao diện kết quả
- - Giao diện xem kết quả đã thực hiện
+ - Giao diện lưu kết quả
  - ...
