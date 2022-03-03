@@ -24,6 +24,15 @@ Mô tả app : dựa vào ứng dụng đã được nghiên cứu MBTI khá n�
  - ESFP - Người trình diễn 
  - ESTJ - Người giám hộ 
  - ESTP - Người thực thi
+ 
  Tài liệu tham khao để thực hiện dồ án : 
- - Cách thức để cho ra kết quả dựa vào kết quả người dùng chọn : tìm thuật toán của mbti
+ - tìm thuật toán của mbti
  - 70 câu hỏi và 16 loại tính cách : topcv.vn
+ 
+ Các giao diện, nhiệm vụ cần làm
+ - Thiết kế logo app, tên ngắn gọn của app
+ - dùng logo để tạo splash sceen 
+ - giao diện home 
+ - giao diện hiển thị các câu hỏi
+ - giao diện kết quả
+ - giao diện lưu kết quả
