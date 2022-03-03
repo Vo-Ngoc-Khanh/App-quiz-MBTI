@@ -11,16 +11,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Center(
-        child: Container(
-          color: Colors.red,
-          width: 200,
-          height: 200,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(200),
+        child: AppBar(
+          flexibleSpace: ClipRRect(
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(50),
+              bottomLeft: Radius.circular(50),
+            ),
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('./banner.jpg'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(50),
+            bottomLeft: Radius.circular(50),
+          )),
         ),
       ),
+      extendBodyBehindAppBar: true,
     );
   }
 }
