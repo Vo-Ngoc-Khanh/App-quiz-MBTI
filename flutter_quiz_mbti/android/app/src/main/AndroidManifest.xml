@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nhom1quizmbti.flutter_quiz_mbti">
    <application
-        android:label="flutter_quiz_mbti"
+        android:label="Trắc nghiệm MBTI"flu
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
