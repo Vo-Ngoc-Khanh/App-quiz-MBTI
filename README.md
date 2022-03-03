@@ -29,7 +29,7 @@ Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) l�
  Tài liệu, dữ liệu tham khảo để thực hiện đồ án : 
  - Tìm thuật toán của phương pháp trắc nghiệm mbti 
  - 70 câu hỏi và 16 loại tính cách : topcv.vn
- - tham khảo các giao diện quiz trên các nền tảng
+ - Tham khảo các giao diện quiz trên các nền tảng
  - ...
 
  Các giao diện, nhiệm vụ cần làm
@@ -40,5 +40,5 @@ Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) l�
  - Giao diện hiển thị các câu hỏi
  - Giao diện kết quả
  - Giao diện lưu kết quả
- - cơ sở dữ liệu lưu trữ thông tin người sử dụng
+ - Cơ sở dữ liệu lưu trữ thông tin người sử dụng
  -...
