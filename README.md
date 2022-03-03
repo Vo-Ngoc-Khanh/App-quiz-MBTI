@@ -39,7 +39,8 @@ có thể sử dụng MBTI để đánh giá mức độ phù hợp về tính c
  - Thiết kế logo app
  - Dùng logo để tạo splash sceen 
  - Giao diện home 
+ - giao diện hướng dẫn
  - Giao diện hiển thị các câu hỏi
  - Giao diện kết quả
  - Giao diện xem kết quả đã thực hiện
- - Và một số chức năng khác...
+ - ...
