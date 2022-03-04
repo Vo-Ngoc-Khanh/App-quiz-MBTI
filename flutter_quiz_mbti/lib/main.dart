@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz_mbti/guide.dart';
 import 'package:flutter_quiz_mbti/home.dart';
 import 'package:lottie/lottie.dart';
 
@@ -15,7 +16,7 @@ class QuizMBTI extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: GuidePage(), //SplashScreen(),
     );
   }
 }
@@ -43,9 +44,6 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Lottie.asset('./loading.json', height: 200, width: 200),
-          // const CircularProgressIndicator(
-          //   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          // )
         ]),
       ),
     );
