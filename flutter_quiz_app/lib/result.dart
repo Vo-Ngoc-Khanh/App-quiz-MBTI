@@ -1,118 +1,77 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/home.dart';
+
 
 class ResultPage extends StatelessWidget {
   const ResultPage({Key? key}) : super(key: key);
 
-  Widget buildNewPage(String text) {
-    return Center(
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 28,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      //require length of tab bar (add number tab bar)
-      length: 5, //number tab bar below appbar
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'AppBar',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          //centerTitle: true,
-          titleSpacing: 0,
-          //   leading: IconButton(
-          //   icon: const Icon(Icons.menu),
-          //   onPressed: () {},
-          // ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.notifications_none),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.search),
-            ),
-          ],
-          elevation: 20,
-          //shadow of appbar
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              /*gradient: LinearGradient(
-                  colors: [Colors.green,Colors.red],
-                  begin: Alignment.bottomRight,
-                  end: Alignment.topLeft,
-                ),*/ //change colors appbar
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/fotis.jpg"),
-                fit: BoxFit.cover,
-              ),/*change background appbar with image*/
-            ),
-          ),
-          bottom: const TabBar(
-            indicatorColor: Colors.white,
-            indicatorWeight: 5,
-            tabs: [
-              Tab(
-                icon: Icon(Icons.home),
-                text: 'Home',
-              ),
-              Tab(
-                icon: Icon(Icons.list_alt),
-                text: 'Feed',
-              ),
-              Tab(
-                icon: Icon(Icons.person),
-                text: 'Profile',
-              ),
-              Tab(
-                icon: Icon(Icons.settings),
-                text: 'Settings',
-              ),
-              Tab(
-                icon: Icon(Icons.add),
-                text: 'Add',
-              ),
-            ],
-          ),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: const [
-              ListTile(
-                title: Text('Võ Ngọc Khánh'),
-                subtitle: Text('Name'),
-              ),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            buildNewPage('Home Page'),
-            buildNewPage('Feed Page'),
-            buildNewPage('Profile Page'),
-            buildNewPage('Settings Page'),
-            buildNewPage('Add'),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage()));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Kết quả'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.download_rounded),
+            tooltip: 'Lưu về máy',
+            onPressed: () {
+              // handle the press
             },
-            label: const Text('Transparent Appbar')
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: 'Chia sẻ',
+            onPressed: () {
+              // handle the press
+            },
+          ),
+        ],
+
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Text('TÍNH CÁCH CỦA BẠN THUỘC NHÓM : INTJ',style: TextStyle( fontSize: 18,fontWeight: FontWeight.bold, color: Colors.red[400]),),
+                  sizedBox(10.0),
+                  text('Bạn thích sự độc lập và ngăn nắp. Bạn là người giàu trí tưởng tưởng. Bạn có óc phân tích và logic. Bạn luôn khao khác nâng cao năng lực và kiến thức của mình.Bạn khá thận trọng và kín đáo.'),
+                  sizedBox(10.0),
+                  text('Việc làm có lẽ phù hợp với bạn là : Nhà văn tự do, hoạch định truyền thông, kiến trúc sư, quản trị mạng, kĩ sư phần mềm'),
+                  sizedBox(10.0),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset('assets/images/result/mbti-result-btns-2.png'),
+                      Image.asset('assets/images/result/intj.png',height: 300,),
+                    ],
+                  ),
+                  sizedBox(90.0),
+                  TextButton(onPressed: (){}, child: const Text('Click để xem chi tiết'))
+                ],
+              ),
+            ),
+          ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
 }
+
+Widget sizedBox(double height) {
+  return SizedBox(
+    height: height,
+  );
+}
+
+Widget text(String text) {
+  return Text(
+    text,
+    style: const TextStyle(fontSize: 18),
+  );
+}
+
+
 

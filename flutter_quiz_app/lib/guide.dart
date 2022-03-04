@@ -34,7 +34,7 @@ class GuidePage extends StatelessWidget {
                         textGuide(
                             'Sau khi hoàn thành bài trắc nghiệm bạn sẽ nhận được kết quả thuộc 1 trong 16 nhóm tính cách sau :'),
                         sizedBox(10.0),
-                        Image.asset('assets/images/mbti.png'),
+                        Image.asset('assets/images/result/mbti.png'),
                         sizedBox(10.0),
                         const Text('Lưu ý:',style: TextStyle(
                           fontSize: 18,
@@ -65,7 +65,7 @@ class GuidePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton.icon(onPressed: (){}, label: const Text("QUAY LẠI"), icon: const Icon(Icons.arrow_back),),
-                  ElevatedButton.icon(onPressed: (){},label: const Text("BẮT ĐÂU"), icon: const Icon(Icons.arrow_forward),),
+                  ElevatedButton.icon(onPressed: (){},label: const Text("BẮT ĐẦU"), icon: const Icon(Icons.arrow_forward),),
                 ],
               ),
             ),
