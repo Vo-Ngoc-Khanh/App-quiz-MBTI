@@ -34,7 +34,7 @@ class GuidePage extends StatelessWidget {
                         textGuide(
                             'Sau khi hoàn thành bài trắc nghiệm bạn sẽ nhận được kết quả thuộc 1 trong 16 nhóm tính cách sau :'),
                         sizedBox(10.0),
-                        Image.asset('./mbti.png'),
+                        Image.asset('assets/images/mbti.png'),
                         sizedBox(10.0),
                         textGuide(
                             'Để bài trắc nghiệm cho kết quả đúng nhất, bạn nên :'),
