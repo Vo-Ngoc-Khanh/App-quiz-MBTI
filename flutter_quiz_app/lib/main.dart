@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/result.dart';
 
 import 'guide.dart';
+import 'home.dart';
 
 
 void main() {
@@ -17,7 +18,7 @@ class QuizMBTI extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GuidePage(), //SplashScreen(),
+      home: HomePage(), //SplashScreen(),
     );
   }
 }
