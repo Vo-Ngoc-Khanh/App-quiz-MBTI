@@ -87,7 +87,16 @@ class _QuestionPageState extends State<QuestionPage> {
                 const SizedBox(
                   width: 110,
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text('QUAY LẠI')),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: const Text('QUAY LẠI')),
                 const SizedBox(
                   width: 50,
                 ),
