@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/guide.dart';
-import 'package:fluttter_quiz_app/settings.dart';
+import 'package:fluttter_quiz_app/views/settings.dart';
+
+import 'guide.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

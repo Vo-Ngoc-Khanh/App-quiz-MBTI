@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/result.dart';
-
+import 'package:fluttter_quiz_app/views/result.dart';
 import 'home.dart';
 
 class QuestionPage extends StatefulWidget {

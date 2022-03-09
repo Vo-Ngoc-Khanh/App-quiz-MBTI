@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/questions.dart';
 
 import 'home.dart';
+import 'questions.dart';
 
 class GuidePage extends StatelessWidget {
   const GuidePage({Key? key}) : super(key: key);
