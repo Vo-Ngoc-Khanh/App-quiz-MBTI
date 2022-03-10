@@ -26,7 +26,7 @@ class GuidePage extends StatelessWidget {
             child: Card(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(40.0),
+                  padding: const EdgeInsets.all(35.0),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

@@ -32,13 +32,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        body: Container(
-          child: Center(
-              child: ElevatedButton(
-            child: const Text('play'),
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const GuidePage())),
-          )),
-        ));
+        body: Center(
+            child: ElevatedButton(
+          child: const Text('PLAY'),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const GuidePage())),
+        )));
   }
 }
