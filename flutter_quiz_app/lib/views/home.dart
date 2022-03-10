@@ -14,8 +14,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              Image.asset('assets/images/logo.png', height: 400, width: 400,),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GuidePage()));
+                  },
+                  child: const Text('PLAY')),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: const Text('Trắc nghiệm tính cách'),
+          leading: Image.asset('assets/images/logo.png'),
           actions: [
             IconButton(
               onPressed: () {},
@@ -31,12 +47,7 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.settings),
             ),
           ],
-        ),
-        body: Center(
-            child: ElevatedButton(
-          child: const Text('PLAY'),
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const GuidePage())),
-        )));
+        )
+    );
   }
 }
