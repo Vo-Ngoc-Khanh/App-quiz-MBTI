@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'home.dart';
 
 class ResultPage extends StatelessWidget {
@@ -37,43 +36,38 @@ class ResultPage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  Text(
-                    'TÍNH CÁCH CỦA BẠN THUỘC NHÓM : INTJ',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red[400]),
-                  ),
-                  sizedBox(10.0),
-                  text(
-                      'Bạn thích sự độc lập và ngăn nắp. Bạn là người giàu trí tưởng tưởng. Bạn có óc phân tích và logic. Bạn luôn khao khác nâng cao năng lực và kiến thức của mình.Bạn khá thận trọng và kín đáo.'),
-                  sizedBox(10.0),
-                  text(
-                      'Việc làm có lẽ phù hợp với bạn là : Nhà văn tự do, hoạch định truyền thông, kiến trúc sư, quản trị mạng, kĩ sư phần mềm'),
-                  sizedBox(10.0),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.asset('assets/images/mbti-result-btns-2.png'),
-                      Image.asset(
-                        'assets/images/intj.png',
-                        height: 300,
-                      ),
-                    ],
-                  ),
-                  sizedBox(90.0),
-                  TextButton(
-                      onPressed: () {},
-                      child: const Text('Click để xem chi tiết'))
-                ],
-              ),
+        padding: const EdgeInsets.all(8.0),
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: [
+                Text(
+                  'TÍNH CÁCH CỦA BẠN THUỘC NHÓM : INTJ',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red[400]),
+                ),
+                sizedBox(10.0),
+                text(
+                    'Bạn thích sự độc lập và ngăn nắp. Bạn là người giàu trí tưởng tưởng. Bạn có óc phân tích và logic. Bạn luôn khao khác nâng cao năng lực và kiến thức của mình.Bạn khá thận trọng và kín đáo.'),
+                sizedBox(10.0),
+                text(
+                    'Việc làm có lẽ phù hợp với bạn là : Nhà văn tự do, hoạch định truyền thông, kiến trúc sư, quản trị mạng, kĩ sư phần mềm'),
+                sizedBox(10.0),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset('assets/images/mbti-result-btns-2.png'),
+                    Image.asset('assets/images/intj.png', height: 300),
+                  ],
+                ),
+                sizedBox(90.0),
+                TextButton(
+                    onPressed: () {},
+                    child: const Text('Click để xem chi tiết'))
+              ],
             ),
           ),
         ),
