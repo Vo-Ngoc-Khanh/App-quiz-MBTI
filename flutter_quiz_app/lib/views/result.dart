@@ -85,6 +85,10 @@ Widget sizedBox(double height) {
 Widget text(String text) {
   return Text(
     text,
-    style: const TextStyle(fontSize: 18),
+    style: const TextStyle(
+      fontSize: 18,
+    ),
+    textAlign: TextAlign.justify,
+    textDirection: TextDirection.ltr,
   );
 }

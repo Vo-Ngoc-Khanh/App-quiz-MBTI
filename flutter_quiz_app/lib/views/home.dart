@@ -12,22 +12,22 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var img = [
-    {'img': 'assets/images/enfj.png','name':'Tính cách ENFJ'},
-    {'img': 'assets/images/enfp.png','name':'Tính cách ENFP'},
-    {'img': 'assets/images/entj.png','name':'Tính cách ENTJ'},
-    {'img': 'assets/images/entp.png','name':'Tính cách ENTP'},
-    {'img': 'assets/images/esfj.png','name':'Tính cách ESFJ'},
-    {'img': 'assets/images/esfp.png','name':'Tính cách ESTJ'},
-    {'img': 'assets/images/estj.png','name':'Tính cách ESTJ'},
-    {'img': 'assets/images/estp.png','name':'Tính cách ESTJ'},
-    {'img': 'assets/images/infj.png','name':'Tính cách INFJ'},
-    {'img': 'assets/images/infp.png','name':'Tính cách INFP'},
-    {'img': 'assets/images/intj.png','name':'Tính cách INTJ'},
-    {'img': 'assets/images/intp.png','name':'Tính cách INTP'},
-    {'img': 'assets/images/isfj.png','name':'Tính cách ISFJ'},
-    {'img': 'assets/images/isfp.png','name':'Tính cách ISFP'},
-    {'img': 'assets/images/istj.png','name':'Tính cách ISTJ'},
-    {'img': 'assets/images/istp.png','name':'Tính cách ISTP'},
+    {'img': 'assets/images/enfj.png', 'name': 'Tính cách ENFJ'},
+    {'img': 'assets/images/enfp.png', 'name': 'Tính cách ENFP'},
+    {'img': 'assets/images/entj.png', 'name': 'Tính cách ENTJ'},
+    {'img': 'assets/images/entp.png', 'name': 'Tính cách ENTP'},
+    {'img': 'assets/images/esfj.png', 'name': 'Tính cách ESFJ'},
+    {'img': 'assets/images/esfp.png', 'name': 'Tính cách ESTJ'},
+    {'img': 'assets/images/estj.png', 'name': 'Tính cách ESTJ'},
+    {'img': 'assets/images/estp.png', 'name': 'Tính cách ESTJ'},
+    {'img': 'assets/images/infj.png', 'name': 'Tính cách INFJ'},
+    {'img': 'assets/images/infp.png', 'name': 'Tính cách INFP'},
+    {'img': 'assets/images/intj.png', 'name': 'Tính cách INTJ'},
+    {'img': 'assets/images/intp.png', 'name': 'Tính cách INTP'},
+    {'img': 'assets/images/isfj.png', 'name': 'Tính cách ISFJ'},
+    {'img': 'assets/images/isfp.png', 'name': 'Tính cách ISFP'},
+    {'img': 'assets/images/istj.png', 'name': 'Tính cách ISTJ'},
+    {'img': 'assets/images/istp.png', 'name': 'Tính cách ISTP'},
   ];
   bool bright = false;
   @override
@@ -56,13 +56,27 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 50,),
-                  Text(img[index]['name'] as String,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                  Image.asset(img[index]['img'] as String, height: 400, width: 500,),
-                  const SizedBox(height: 10,),
-                  Text(img[index]['name'] as String,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Text(
+                    img[index]['name'] as String,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Image.asset(
+                    img[index]['img'] as String,
+                    height: 400,
+                    width: 500,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    img[index]['name'] as String,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ],
               ),
             ),
@@ -72,10 +86,13 @@ class _HomePageState extends State<HomePage> {
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>const GuidePage()));
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const GuidePage()));
           },
-          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY')),
+          label: const Text(
+            'KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',
+          )),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

@@ -9,6 +9,8 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool theme = false;
+  bool language = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,39 +21,57 @@ class _SettingsPageState extends State<SettingsPage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            buildNotificationOptionRow("Đổi giao diện", false),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Đổi giao diện",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[600]),
+                ),
+                Transform.scale(
+                    scale: 0.7,
+                    child: CupertinoSwitch(
+                      value: theme,
+                      onChanged: (bool val) {
+                        setState(() {
+                          theme = val;
+                        });
+                      },
+                    ))
+              ],
+            ),
             const Divider(
               height: 10,
               thickness: 2,
             ),
-            buildNotificationOptionRow("Đổi ngôn ngữ", false),
-            const SizedBox(
-              height: 50,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Đổi ngôn ngữ",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[600]),
+                ),
+                Transform.scale(
+                    scale: 0.7,
+                    child: CupertinoSwitch(
+                      value: language,
+                      onChanged: (bool val) {
+                        setState(() {
+                          language = val;
+                        });
+                      },
+                    ))
+              ],
             ),
           ],
         ),
       ),
-    );
-  }
-
-  Row buildNotificationOptionRow(String title, bool isActive) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600]),
-        ),
-        Transform.scale(
-            scale: 0.7,
-            child: CupertinoSwitch(
-              value: isActive,
-              onChanged: (bool val) {},
-            ))
-      ],
     );
   }
 }

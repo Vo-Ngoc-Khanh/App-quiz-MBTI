@@ -11,6 +11,12 @@ class QuestionPage extends StatefulWidget {
 
 class _QuestionPageState extends State<QuestionPage> {
   int indexAnwser = 0;
+  bool finished() {
+    if (indexAnwser == 5) {
+      return true;
+    }
+    return false;
+  }
 
   final questions = [
     {
@@ -61,6 +67,7 @@ class _QuestionPageState extends State<QuestionPage> {
     {'group': '5', 'click': false},
     {'group': '6', 'click': false}
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,14 +116,14 @@ class _QuestionPageState extends State<QuestionPage> {
           scrollDirection: Axis.vertical,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
                     height: 10,
                   ),
-                  Question(
+                  _Question(
                     questions[index]['questionText'] as String,
                   ),
                   ...(questions[index]['answerText']
@@ -125,6 +132,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     return _RadioButton(
                         title: answer['text'],
                         value: answer['case'],
+                        group: send[index]['group'] as String,
                         onChanged: (newValue) {
                           setState(() {
                             if (send[index]['click'] == false) {
@@ -133,8 +141,7 @@ class _QuestionPageState extends State<QuestionPage> {
                             send[index]['group'] = newValue!;
                             send[index]['click'] = true;
                           });
-                        },
-                        group: send[index]['group'] as String);
+                        });
                   }).toList(),
                 ],
               ),
@@ -164,7 +171,7 @@ class _QuestionPageState extends State<QuestionPage> {
   }
 
   // ignore: non_constant_identifier_names
-  Widget Question(String questionText) {
+  Widget _Question(String questionText) {
     return Text(
       questionText,
       style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -181,7 +188,12 @@ class _QuestionPageState extends State<QuestionPage> {
       value: value,
       groupValue: group,
       onChanged: onChanged,
-      title: Text(title),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 18),
+        textAlign: TextAlign.justify,
+        textDirection: TextDirection.ltr,
+      ),
     );
   }
 }

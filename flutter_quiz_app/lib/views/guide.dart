@@ -120,5 +120,7 @@ Widget textGuide(String text) {
   return Text(
     text,
     style: const TextStyle(fontSize: 18),
+    textAlign: TextAlign.justify,
+    textDirection: TextDirection.ltr,
   );
 }
