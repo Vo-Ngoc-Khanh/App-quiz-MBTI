@@ -40,5 +40,5 @@ Mô tả app : Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) l�
  - Giao diện hiển thị các câu hỏi
  - Giao diện kết quả
  - Giao diện lưu kết quả
- - Cơ sở dữ liệu lưu trữ thông tin người sử dụng
+ - Cơ sở dữ liệu lưu trữ thông tin người sử dụng???
  - ...
