@@ -12,22 +12,86 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var img = [
-    {'img': 'assets/images/enfj.png', 'name': 'Tính cách ENFJ'},
-    {'img': 'assets/images/enfp.png', 'name': 'Tính cách ENFP'},
-    {'img': 'assets/images/entj.png', 'name': 'Tính cách ENTJ'},
-    {'img': 'assets/images/entp.png', 'name': 'Tính cách ENTP'},
-    {'img': 'assets/images/esfj.png', 'name': 'Tính cách ESFJ'},
-    {'img': 'assets/images/esfp.png', 'name': 'Tính cách ESTJ'},
-    {'img': 'assets/images/estj.png', 'name': 'Tính cách ESTJ'},
-    {'img': 'assets/images/estp.png', 'name': 'Tính cách ESTJ'},
-    {'img': 'assets/images/infj.png', 'name': 'Tính cách INFJ'},
-    {'img': 'assets/images/infp.png', 'name': 'Tính cách INFP'},
-    {'img': 'assets/images/intj.png', 'name': 'Tính cách INTJ'},
-    {'img': 'assets/images/intp.png', 'name': 'Tính cách INTP'},
-    {'img': 'assets/images/isfj.png', 'name': 'Tính cách ISFJ'},
-    {'img': 'assets/images/isfp.png', 'name': 'Tính cách ISFP'},
-    {'img': 'assets/images/istj.png', 'name': 'Tính cách ISTJ'},
-    {'img': 'assets/images/istp.png', 'name': 'Tính cách ISTP'},
+    {
+      'img': 'assets/images/enfj.png',
+      'name': 'Tính cách ENFJ',
+      'text': 'Người cho đi'
+    },
+    {
+      'img': 'assets/images/enfp.png',
+      'name': 'Tính cách ENFP',
+      'text': 'Người truyền cảm hứng'
+    },
+    {
+      'img': 'assets/images/entj.png',
+      'name': 'Tính cách ENTJ',
+      'text': 'Người điều hành'
+    },
+    {
+      'img': 'assets/images/entp.png',
+      'name': 'Tính cách ENTP',
+      'text': 'Người nhìn xa'
+    },
+    {
+      'img': 'assets/images/esfj.png',
+      'name': 'Tính cách ESFJ',
+      'text': 'Người quan tâm'
+    },
+    {
+      'img': 'assets/images/esfp.png',
+      'name': 'Tính cách ESTJ',
+      'text': 'Người trình diễn'
+    },
+    {
+      'img': 'assets/images/estj.png',
+      'name': 'Tính cách ESTJ',
+      'text': 'Người giám hộ'
+    },
+    {
+      'img': 'assets/images/estp.png',
+      'name': 'Tính cách ESTJ',
+      'text': 'Người thực thi'
+    },
+    {
+      'img': 'assets/images/infj.png',
+      'name': 'Tính cách INFJ',
+      'text': 'Người trách nhiệm'
+    },
+    {
+      'img': 'assets/images/infp.png',
+      'name': 'Tính cách INFP',
+      'text': 'Người nuôi dưỡng'
+    },
+    {
+      'img': 'assets/images/intj.png',
+      'name': 'Tính cách INTJ',
+      'text': 'Người nghệ sĩ'
+    },
+    {
+      'img': 'assets/images/intp.png',
+      'name': 'Tính cách INTP',
+      'text': 'Người kỹ thuật'
+    },
+    {
+      'img': 'assets/images/isfj.png',
+      'name': 'Tính cách ISFJ',
+      'text': 'Người lý tưởng hóa'
+    },
+    {
+      'img': 'assets/images/isfp.png',
+      'name': 'Tính cách ISFP',
+      'text': 'Người che chở'
+    },
+    {
+      'img': 'assets/images/istj.png',
+      'name': 'Tính cách ISTJ',
+      'text': 'Người khoa học'
+    },
+    {
+      'img': 'assets/images/istp.png',
+      'name': 'Tính cách ISTP',
+      'text': 'Người tư duy'
+    },
   ];
   bool bright = false;
   @override
@@ -73,9 +137,9 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   Text(
-                    img[index]['name'] as String,
+                    img[index]['text'] as String,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
