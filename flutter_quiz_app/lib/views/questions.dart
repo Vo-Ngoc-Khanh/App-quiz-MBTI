@@ -1,5 +1,6 @@
+import 'package:first_app/result.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/views/result.dart';
+//import 'package:fluttter_quiz_app/views/result.dart';
 import 'home.dart';
 
 class QuestionPage extends StatefulWidget {
@@ -57,6 +58,13 @@ class _QuestionPageState extends State<QuestionPage> {
         {"text": "B. Những gì cảm động", "case": "F"},
       ],
     },
+    {
+      "questionText": "6. Bạn thích tôi chứ gì?:",
+      "answerText": [
+        {"text": "A. có", "case": "T"},
+        {"text": "B. không", "case": "F"},
+      ],
+    },
   ];
 
   var send = [
@@ -65,7 +73,8 @@ class _QuestionPageState extends State<QuestionPage> {
     {'group': '3', 'click': false},
     {'group': '4', 'click': false},
     {'group': '5', 'click': false},
-    {'group': '6', 'click': false}
+    {'group': '6', 'click': false},
+    {'group': '7', 'click': false}
   ];
 
   @override
@@ -99,7 +108,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     color: Colors.yellow),
               ),
               const Text(
-                '/5',
+                '/6',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -153,7 +162,7 @@ class _QuestionPageState extends State<QuestionPage> {
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 5 ? true : false,
+        visible: indexAnwser == 6 ? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(
