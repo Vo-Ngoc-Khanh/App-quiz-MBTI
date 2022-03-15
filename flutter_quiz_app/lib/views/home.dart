@@ -55,42 +55,42 @@ class _HomePageState extends State<HomePage> {
     {
       'img': 'assets/images/infj.png',
       'name': 'Tính cách INFJ',
-      'text': 'Người trách nhiệm'
+      'text': 'Người che chở'
     },
     {
       'img': 'assets/images/infp.png',
       'name': 'Tính cách INFP',
-      'text': 'Người nuôi dưỡng'
+      'text': 'Người lý tưởng hóa'
     },
     {
       'img': 'assets/images/intj.png',
       'name': 'Tính cách INTJ',
-      'text': 'Người nghệ sĩ'
+      'text': 'Nhà khoa học'
     },
     {
       'img': 'assets/images/intp.png',
       'name': 'Tính cách INTP',
-      'text': 'Người kỹ thuật'
+      'text': 'Nhà tư duy'
     },
     {
       'img': 'assets/images/isfj.png',
       'name': 'Tính cách ISFJ',
-      'text': 'Người lý tưởng hóa'
+      'text': 'Người nuôi dưỡng'
     },
     {
       'img': 'assets/images/isfp.png',
       'name': 'Tính cách ISFP',
-      'text': 'Người che chở'
+      'text': 'Người nghệ sĩ'
     },
     {
       'img': 'assets/images/istj.png',
       'name': 'Tính cách ISTJ',
-      'text': 'Người khoa học'
+      'text': 'Người trách nhiệm'
     },
     {
       'img': 'assets/images/istp.png',
       'name': 'Tính cách ISTP',
-      'text': 'Người tư duy'
+      'text': 'Nhà kỹ thuật'
     },
   ];
   bool bright = false;
@@ -130,8 +130,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Image.asset(
                     img[index]['img'] as String,
-                    height: 400,
-                    width: 500,
+                    height: 350,
+                    width: 450,
                   ),
                   const SizedBox(
                     height: 10,
