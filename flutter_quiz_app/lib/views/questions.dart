@@ -1,6 +1,12 @@
+import 'package:first_app/result.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:fluttter_quiz_app/views/alertdialog.dart';
 import 'package:fluttter_quiz_app/views/result.dart';
+=======
+//import 'package:fluttter_quiz_app/views/result.dart';
+import 'home.dart';
+>>>>>>> e083d7d23b82f8b1c27840f329318305bf1e07d0
 
 class QuestionPage extends StatefulWidget {
   const QuestionPage({Key? key}) : super(key: key);
@@ -92,6 +98,13 @@ class _QuestionPageState extends State<QuestionPage> {
         {"text": "Những việc có khả năng xảy ra", "case": "N"},
       ],
     },
+    {
+      "questionText": "6. Bạn thích tôi chứ gì?:",
+      "answerText": [
+        {"text": "A. có", "case": "T"},
+        {"text": "B. không", "case": "F"},
+      ],
+    },
   ];
 
   var send = [
@@ -101,10 +114,14 @@ class _QuestionPageState extends State<QuestionPage> {
     {'group': '4', 'click': false},
     {'group': '5', 'click': false},
     {'group': '6', 'click': false},
+<<<<<<< HEAD
     {'group': '7', 'click': false},
     {'group': '8', 'click': false},
     {'group': '9', 'click': false},
     {'group': '10', 'click': false},
+=======
+    {'group': '7', 'click': false}
+>>>>>>> e083d7d23b82f8b1c27840f329318305bf1e07d0
   ];
 
   @override
@@ -134,7 +151,11 @@ class _QuestionPageState extends State<QuestionPage> {
                     color: Colors.yellow),
               ),
               const Text(
+<<<<<<< HEAD
                 '/10',
+=======
+                '/6',
+>>>>>>> e083d7d23b82f8b1c27840f329318305bf1e07d0
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -191,7 +212,11 @@ class _QuestionPageState extends State<QuestionPage> {
         ),
       ),
       floatingActionButton: Visibility(
+<<<<<<< HEAD
         visible: indexAnwser == 10 ? true : false,
+=======
+        visible: indexAnwser == 6 ? true : false,
+>>>>>>> e083d7d23b82f8b1c27840f329318305bf1e07d0
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(
