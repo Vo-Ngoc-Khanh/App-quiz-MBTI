@@ -92,13 +92,6 @@ class _QuestionPageState extends State<QuestionPage> {
         {"text": "Những việc có khả năng xảy ra", "case": "N"},
       ],
     },
-    {
-      "questionText": "6. Bạn thích tôi chứ gì?:",
-      "answerText": [
-        {"text": "A. có", "case": "T"},
-        {"text": "B. không", "case": "F"},
-      ],
-    },
   ];
 
   var send = [
@@ -112,7 +105,6 @@ class _QuestionPageState extends State<QuestionPage> {
     {'group': '8', 'click': false},
     {'group': '9', 'click': false},
     {'group': '10', 'click': false},
-    {'group': '7', 'click': false}
   ];
 
   @override
