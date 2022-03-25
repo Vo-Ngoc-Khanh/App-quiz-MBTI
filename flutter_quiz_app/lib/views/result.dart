@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-class ResultPage extends StatelessWidget {
-  const ResultPage({Key? key}) : super(key: key);
+class ResultPage extends StatefulWidget {
+  const ResultPage({Key? key, required this.result}) : super(key: key);
+  final String result;
+  @override
+  State<ResultPage> createState() => _ResultPageState();
+}
 
+class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +48,7 @@ class ResultPage extends StatelessWidget {
             child: ListView(
               children: [
                 Text(
-                  'TÍNH CÁCH CỦA BẠN THUỘC NHÓM : INTJ',
+                  'TÍNH CÁCH CỦA BẠN THUỘC NHÓM : ${widget.result}',
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

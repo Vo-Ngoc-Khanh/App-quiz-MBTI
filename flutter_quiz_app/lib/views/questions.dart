@@ -11,12 +11,6 @@ class QuestionPage extends StatefulWidget {
 
 class _QuestionPageState extends State<QuestionPage> {
   int indexAnwser = 0;
-  bool finished() {
-    if (indexAnwser == 5) {
-      return true;
-    }
-    return false;
-  }
 
   final questions = [
     {
@@ -106,7 +100,92 @@ class _QuestionPageState extends State<QuestionPage> {
     {'group': '9', 'click': false},
     {'group': '10', 'click': false},
   ];
+  
+  String result1 = '';
+  String result2 = '';
+  String result3 = '';
+  String result4 = '';
+  String result = '';
+  var E = 0;
+  var I = 0;
+  var S = 0;
+  var N = 0;
+  var T = 0;
+  var F = 0;
+  var J = 0;
+  var P = 0;
 
+  void _chooseAnswer(String choose, bool click) {
+    if (click == false) {
+      if (choose == "E") {
+        E++;
+      } else if (choose == "I") {
+        I++;
+      } else if (choose == "S") {
+        S++;
+      } else if (choose == "N") {
+        N++;
+      } else if (choose == "T") {
+        T++;
+      } else if (choose == "F") {
+        F++;
+      } else if (choose == "J") {
+        J++;
+      } else if (choose == "P") {
+        P++;
+      }
+    } else {
+      if (choose == "E") {
+        I--;
+        E++;
+      } else if (choose == "I") {
+        E--;
+        I++;
+      } else if (choose == "S") {
+        N--;
+        S++;
+      } else if (choose == "N") {
+        S--;
+        N++;
+      } else if (choose == "T") {
+        F--;
+        T++;
+      } else if (choose == "F") {
+        T--;
+        F++;
+      } else if (choose == "J") {
+        P--;
+        J++;
+      } else if (choose == "P") {
+        J--;
+        P++;
+      }
+    }
+  }
+  String resultQuiz() {
+    if (E >= I) {
+      result1 = 'E';
+    } else if (E < I) {
+      result1 = 'I';
+    }
+    if (S >= N) {
+      result2 = 'S';
+    } else if (S < N) {
+      result2 = 'N';
+    }
+    if (T >= F) {
+      result3 = 'T';
+    } else if (T < F) {
+      result3 = 'F';
+    }
+    if (J >= P) {
+      result4 = 'J';
+    } else if (J < P) {
+      result4 = 'P';
+    }
+    result =  result1 + result2 + result3 +result4;
+    return result;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -177,7 +256,12 @@ class _QuestionPageState extends State<QuestionPage> {
                               indexAnwser++;
                             }
                             send[index]['group'] = newValue!;
+                             _chooseAnswer(
+                              answer['case'] as String, 
+                              send[index]['click'] as bool,
+                              );
                             send[index]['click'] = true;
+
                           });
                         });
                   }).toList(),
@@ -196,7 +280,7 @@ class _QuestionPageState extends State<QuestionPage> {
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => const ResultPage()),
+              MaterialPageRoute(builder: (context) => ResultPage(result: resultQuiz())),
               (Route<dynamic> route) => false,
             );
           },
