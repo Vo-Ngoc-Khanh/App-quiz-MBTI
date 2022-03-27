@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/widgets/colors.dart';
 
 import 'home.dart';
 import 'questions.dart';
@@ -55,7 +56,7 @@ class GuidePage extends StatelessWidget {
           Container(
             height: 50,
             width: double.infinity,
-            color: Colors.indigo,
+            color: general,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -104,6 +105,5 @@ Widget textGuide(String text) {
     text,
     style: const TextStyle(fontSize: 18),
     textAlign: TextAlign.justify,
-    textDirection: TextDirection.ltr,
   );
 }

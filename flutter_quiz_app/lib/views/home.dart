@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
     {'img': 'assets/images/istp.png','name': 'Tính cách ISTP','text': 'Nhà kỹ thuật' },
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,38 +69,37 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  const SizedBox(height: 50,),
-                  Text(
-                    img[index]['name'] as String,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold), ),
-                  Image.asset( img[index]['img'] as String,height: 350,width: 450,),
-                  const SizedBox(height: 10,),
-                  Text(
-                    img[index]['text'] as String,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-        itemCount: img.length,
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
+      body: Container(
+        alignment: Alignment.center,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return Column(
+              children: [
+                const SizedBox(height: 50,),
+                Text(
+                  img[index]['name'] as String,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                const SizedBox(height: 20,),
+                Image.asset( img[index]['img'] as String,height: 300,width: 360,),
+                const SizedBox(height: 10,),
+                Text(
+                  img[index]['text'] as String,
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            );
+          },
+          itemCount: img.length,
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
           backgroundColor: Colors.indigo,
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => const GuidePage()));
           },
-          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',)),
+          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
