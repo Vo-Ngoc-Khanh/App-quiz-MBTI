@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/views/settings.dart';
-
 import 'guide.dart';
-
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:flutter_swiper/flutter_swiper.dart'; // cách fix : flutter run --no-sound-null-safety
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var img = [
+  final listimg = [
     {'img': 'assets/images/enfj.png','name': 'Tính cách ENFJ','text': 'Người cho đi'},
     {'img': 'assets/images/enfp.png','name': 'Tính cách ENFP','text': 'Người truyền cảm hứng'},
     {'img': 'assets/images/entj.png','name': 'Tính cách ENTJ','text': 'Người điều hành'},
@@ -34,29 +34,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.indigo,
-              ),
-              child: Text('Name'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const Drawer(backgroundColor: Colors.indigo),
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         title: const Text('Trắc nghiệm tính cách'),
@@ -69,29 +47,56 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context, int index) {
-            return Column(
-              children: [
-                const SizedBox(height: 50,),
-                Text(
-                  img[index]['name'] as String,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                const SizedBox(height: 20,),
-                Image.asset( img[index]['img'] as String,height: 300,width: 360,),
-                const SizedBox(height: 10,),
-                Text(
-                  img[index]['text'] as String,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ],
-            );
-          },
-          itemCount: img.length,
-          separatorBuilder: (BuildContext context, int index) => const Divider(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          height: 500,
+          padding: const EdgeInsets.only(left: 32),
+          child : Swiper(
+            itemCount:listimg.length,
+            itemWidth: MediaQuery.of(context).size.width-2*64,
+            layout: SwiperLayout.STACK,
+            pagination: const SwiperPagination(
+              builder: DotSwiperPaginationBuilder(
+                activeSize: 15,
+                activeColor: Colors.blue,
+                color: Colors.blueGrey,
+              )),
+            itemBuilder: (context,index){
+              return Stack(
+                children: [
+                  Image.asset(listimg[index]['img'] as String),
+                  Column(
+                    children: [
+                      const SizedBox( height: 280,),
+                      Card(
+                      elevation: 8,//shadow of card widget
+                      color: Colors.cyanAccent,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                          Text(listimg[index]['name'] as String, style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
+                          Text(listimg[index]['text'] as String, style: const TextStyle( fontWeight: FontWeight.w500, fontSize: 14),),
+                          const SizedBox(height: 20,),
+                          InkWell(
+                            child: Row(children: const [
+                              Text('Xem thêm', style: TextStyle( fontWeight: FontWeight.normal, fontSize: 10),textAlign: TextAlign.left,),
+                              Icon(Icons.arrow_forward, size: 10,)
+                            ],),
+                            onTap: (){},
+                          )
+                        ]),
+                      ),
+                    ),
+                    ],
+                  ),
+                  
+                ],
+              );
+            },
+            )
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
