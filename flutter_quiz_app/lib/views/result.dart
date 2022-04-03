@@ -118,7 +118,57 @@ class ResultPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      body:Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          alignment: Alignment.center,
+          height: 600,
+          padding: const EdgeInsets.all(16.0),
+          child :  Stack(
+            children: [
+              Image.asset(getIMG),
+              Column(
+                children: [
+                  const SizedBox( height: 250,),
+                  Card(
+                    elevation: 8,//shadow of card widget
+                    color: Colors.cyanAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('TÍNH CÁCH CỦA BẠN THUỘC NHÓM : $result', style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 14,color: Colors.black),),
+                          const SizedBox(height: 20,),
+                          InkWell(
+                            child: Row(children: const [
+                              Text('Xem thêm', style: TextStyle( fontWeight: FontWeight.normal, fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
+                              Icon(Icons.arrow_forward, size: 10,color: Colors.black,)
+                            ],),
+                            onTap: _launchURL,
+                          )
+                        ]),
+                      ),
+                    ),
+                    ],
+                  ),
+                  
+                ],
+              )
+            )
+        ),
+    );
+  }
+}
+
+// Widget sizedBox(double height) {
+//   return SizedBox(
+//     height: height,
+//   );
+// }
+
+/*
+ Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
           color: primaryTextColor,
@@ -144,15 +194,5 @@ class ResultPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-Widget sizedBox(double height) {
-  return SizedBox(
-    height: height,
-  );
-}
-
-
+ */
 

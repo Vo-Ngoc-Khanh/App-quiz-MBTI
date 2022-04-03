@@ -673,7 +673,7 @@ class _QuestionPageState extends State<QuestionPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Trắc nghiệm tính cách'),
+        title: const Text('Trắc nghiệm MBTI'),
         leading: IconButton(
             onPressed: () {
               showAlertDialog(context);
@@ -689,7 +689,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.yellow),
               ),
-              const Text('/70', style: TextStyle(fontSize: 18,),),
+              const Text('/5', style: TextStyle(fontSize: 18,),),
               const SizedBox(width: 50,),
             ],
           )
@@ -725,12 +725,12 @@ class _QuestionPageState extends State<QuestionPage> {
               ),
             );
           },
-          itemCount: questions.length,
+          itemCount: 5,//questions.length,
           separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 70 ? true : false,
+        visible: indexAnwser == 5 ? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,
