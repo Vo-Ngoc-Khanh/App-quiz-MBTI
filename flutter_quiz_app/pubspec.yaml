@@ -37,7 +37,8 @@ dependencies:
   lottie: ^1.2.2
   url_launcher: ^6.0.20
   flutter_swiper: ^1.1.6
-  
+  shared_preferences: ^2.0.13
+  provider: ^6.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

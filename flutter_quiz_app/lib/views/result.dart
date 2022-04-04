@@ -160,39 +160,3 @@ class ResultPage extends StatelessWidget {
     );
   }
 }
-
-// Widget sizedBox(double height) {
-//   return SizedBox(
-//     height: height,
-//   );
-// }
-
-/*
- Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          color: primaryTextColor,
-          alignment: Alignment.center,
-          child: ListView(
-            children: [
-              sizedBox(10.0),
-              Text('         TÍNH CÁCH CỦA BẠN THUỘC NHÓM : $result',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.red[400]),),
-              sizedBox(50.0),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset('assets/images/mbti-result-btns-2.png'),
-                  Image.asset(getIMG, height: 270),
-                ],
-              ),
-              sizedBox(50.0),
-              TextButton(
-                onPressed: _launchURL,
-                child: const Text('Click để xem chi tiết hơn')
-              ),
-            ],
-          ),
-        ),
-      ),
- */
-

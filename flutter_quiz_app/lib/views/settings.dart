@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
+import 'package:provider/provider.dart';
+
+import '../widgets/theme.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -26,13 +29,8 @@ class _SettingsPageState extends State<SettingsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Đổi giao diện",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[600]),
-                ),
+                Text("Đổi giao diện",
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500, color: Colors.grey[600]), ),
                 Transform.scale(
                     scale: 0.7,
                     child: CupertinoSwitch(
@@ -40,25 +38,18 @@ class _SettingsPageState extends State<SettingsPage> {
                       onChanged: (bool val) {
                         setState(() {
                           theme = val;
+                          Provider.of<ThemeProvider>(context, listen: false).swapTheme();
                         });
                       },
                     ))
               ],
             ),
-            const Divider(
-              height: 10,
-              thickness: 2,
-            ),
+            const Divider(height: 10,thickness: 2,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Đổi ngôn ngữ",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[600]),
-                ),
+                Text("Đổi ngôn ngữ",
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.grey[600]),),
                 Transform.scale(
                     scale: 0.7,
                     child: CupertinoSwitch(
