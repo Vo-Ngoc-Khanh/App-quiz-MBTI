@@ -67,10 +67,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(backgroundColor: Colors.indigo),
+      drawer: Drawer(
+          child: ListView(
+            children: const [
+              ListTile(
+                title: Text('Võ Ngọc Khánh'),
+                subtitle: Text('Nhóm trưởng'),
+              ),
+              ListTile(
+                title: Text('Lê Sĩ Khang'),
+                subtitle: Text('Thành viên'),
+              ),
+              ListTile(
+                title: Text('Nguyễn Phước Tuấn'),
+                subtitle: Text('Thành viên'),
+              ),
+            ],
+          ),
+        ),
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: const Text('Trắc nghiệm MBTI'),
+        title: const Text('Trắc nghiệm MBTI',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),),
         actions: [
           IconButton(
             onPressed: () {
@@ -110,12 +127,12 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                          Text(listimg[index]['name'] as String, style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 18,color: Colors.black),),
-                          Text(listimg[index]['text'] as String, style: const TextStyle( fontWeight: FontWeight.w500, fontSize: 14,color: Colors.black),),
+                          Text(listimg[index]['name'] as String, style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 18,color: Colors.black,fontFamily: 'Times New Roman'),),
+                          Text(listimg[index]['text'] as String, style: const TextStyle( fontWeight: FontWeight.w500, fontSize: 14,color: Colors.black,fontFamily: 'Times New Roman'),),
                           const SizedBox(height: 20,),
                           InkWell(
                             child: Row(children: const [
-                              Text('Xem thêm ', style: TextStyle( fontWeight: FontWeight.normal, fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
+                              Text('Xem thêm ', style: TextStyle( fontFamily: 'Times New Roman', fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
                               Icon(Icons.arrow_forward, size: 10,color: Colors.black,)
                             ],),
                             onTap: () async{
@@ -139,7 +156,8 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => const GuidePage()));
           },
-          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w900),)),
+          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',
+          style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'Times New Roman')),),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

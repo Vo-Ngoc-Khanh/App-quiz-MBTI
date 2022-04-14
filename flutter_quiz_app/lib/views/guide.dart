@@ -12,7 +12,7 @@ class GuidePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: const Text('Hướng dẫn',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+        title: const Text('Hướng dẫn',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),
         ),
       ),
       body: Stack(
@@ -25,11 +25,7 @@ class GuidePage extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: ListView(children: [
                   const Text('Trắc nghiệm tính cách MBTI',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),),
                   sizedBox(10.0),
                   textGuide('Bài trắc nghiệm này gồm 70 câu hỏi ngắn về chính bản thân bạn.Bạn có 10 phút để làm bài. Thông thường chỉ mất khoảng 7 phút để hoàn thành. '),
                   sizedBox(10.0),
@@ -103,7 +99,7 @@ Widget sizedBox(double height) {
 Widget textGuide(String text) {
   return Text(
     text,
-    style: const TextStyle(fontSize: 18),
+    style: const TextStyle(fontSize: 18,fontFamily: 'Times New Roman',height: 1.5),
     textAlign: TextAlign.justify,
   );
 }

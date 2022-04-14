@@ -1,97 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/views/detail_result.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
 import 'home.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
+class ResultPage extends StatefulWidget {
+  const ResultPage(this.result, this.E, this.I, this.S, this.N, this.T, this.F, this.J, this.P, {Key? key}) : super(key: key);
 
-class ResultPage extends StatelessWidget {
-  const ResultPage({Key? key, required this.result}) : super(key: key);
   final String result;
+  final int E;final int I;final int S;final int N;final int T;final int F;final int J;final int P;
 
-  String get getURL{
-    String url;
-    if (result =="ENFJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-enfj.html';
-    } else if (result =="ENFP") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-enfp.html';
-    } else if (result =="ENTJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-entj.html';
-    } else if (result =="ENTP") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-entp.html';
-    } else if (result =="ESFJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-esfj.html';
-    }else if (result =="ESFP") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-esfp.html';
-    } else if (result =="ESTJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-estj.html';
-    } else if (result =="ESTP") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-estp.html';
-    } else if (result =="INFJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-infj.html';
-    } else if (result =="INFP") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-infb.html';
-    } else if (result =="INTJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-intj.html';
-    } else if (result =="INTP ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-intp.html';
-    } else if (result =="ISFJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-isfj.html';
-    }else if (result =="ISFP ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-isfp.html';
-    } else if (result =="ISTJ") {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-istj.html';
-    }else {
-      url = 'https://www.topcv.vn/mbti/nhom-tinh-cach-istp.html';
-    }
-    return url;
+  @override
+  State<ResultPage> createState() => _ResultPageState();
+}
+
+class _ResultPageState extends State<ResultPage> {
+  
+   final List<charts.Series<TinhCach,String>> _seriesPieData = <charts.Series<TinhCach, String>>[];
+  _getData(){
+    var pieData = [
+      TinhCach('Hướng ngoại', widget.E, Colors.pink),
+      TinhCach('Hướng nội', widget.I, Colors.blue),
+      TinhCach('Giác quan', widget.S, Colors.orange),
+      TinhCach('Trực giác', widget.N, Colors.green),
+      TinhCach('Lý trí', widget.T, Colors.yellow),
+      TinhCach('Cảm xúc', widget.F, Colors.cyan),
+      TinhCach('Nguyên tắc', widget.J, Colors.red),
+      TinhCach('Linh hoạt', widget.P, Colors.purple),
+    ];
+     _seriesPieData.add(
+      charts.Series(
+        data: pieData,
+        id: 'Kết quả',
+        domainFn: (TinhCach tc,_)=>tc.ten,
+        measureFn: (TinhCach tc,_)=>tc.diem,
+        colorFn: (TinhCach tc,_)=>
+          charts.ColorUtil.fromDartColor(tc.color),
+        labelAccessorFn: (TinhCach tc, _)=>'${((tc.diem*100)/70).toStringAsFixed(2)}%',
+      )
+     );
   }
-  void _launchURL() async {
-    if (!await launch(getURL)) throw 'Could not launch $getURL';
+  @override
+  void initState() {
+    super.initState();
+    _getData();
   }
 
-  String get getIMG{
-    String url;
-    if (result =="ENFJ") {
-      url = 'assets/images/enfj.png';
-    } else if (result =="ENFP") {
-      url = 'assets/images/enfp.png';
-    } else if (result =="ENTJ") {
-      url = 'assets/images/entj.png';
-    } else if (result =="ENTP") {
-      url = 'assets/images/entp.png';
-    } else if (result =="ESFJ") {
-      url = 'assets/images/esfj.png';
-    }else if (result =="ESFP") {
-      url = 'assets/images/esfp.png';
-    } else if (result =="ESTJ") {
-      url = 'assets/images/estj.png';
-    } else if (result =="ESTP") {
-      url = 'assets/images/estp.png';
-    } else if (result =="INFJ") {
-      url = 'assets/images/infj.png';
-    } else if (result =="INFP") {
-      url = 'assets/images/infp.png';
-    } else if (result =="INTJ") {
-      url = 'assets/images/intj.png';
-    } else if (result =="INTP ") {
-      url = 'assets/images/intp.png';
-    } else if (result =="ISFJ") {
-      url = 'assets/images/isfj.png';
-    }else if (result =="ISFP ") {
-      url = 'assets/images/isfp.png';
-    } else if (result =="ISTJ") {
-      url = 'assets/images/istj.png';
-    }else {
-      url = 'assets/images/istp.png';
-    }
-    return url;
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Kết quả'),
+        title: const Text('Kết quả',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman')),
         leading: IconButton(
             onPressed: () {
               Navigator.pushAndRemoveUntil(
@@ -118,45 +78,52 @@ class ResultPage extends StatelessWidget {
           ),
         ],
       ),
-      body:Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 600,
-          padding: const EdgeInsets.all(16.0),
-          child :  Stack(
-            children: [
-              Image.asset(getIMG),
-              Column(
-                children: [
-                  const SizedBox( height: 250,),
-                  Card(
-                    elevation: 8,//shadow of card widget
-                    color: Colors.cyanAccent,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('TÍNH CÁCH CỦA BẠN THUỘC NHÓM : $result', style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 14,color: Colors.black),),
-                          const SizedBox(height: 20,),
-                          InkWell(
-                            child: Row(children: const [
-                              Text('Xem thêm', style: TextStyle( fontWeight: FontWeight.normal, fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
-                              Icon(Icons.arrow_forward, size: 10,color: Colors.black,)
-                            ],),
-                            onTap: _launchURL,
-                          )
-                        ]),
-                      ),
-                    ),
-                    ],
-                  ),
-                  
-                ],
-              )
-            )
-        ),
+        child: Column(children: [
+          Text('Tính cách của bạn thuộc nhóm ${widget.result}',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          Expanded(child: charts.PieChart(
+            _seriesPieData,
+            animate: true,
+            animationDuration: const Duration(seconds: 5),
+            behaviors: [
+              charts.DatumLegend(
+                outsideJustification: charts.OutsideJustification.endDrawArea,
+                horizontalFirst: false,
+                desiredMaxRows: 2,
+                cellPadding: const EdgeInsets.all(4.0),
+                entryTextStyle: charts.TextStyleSpec(
+                  color: charts.MaterialPalette.purple.shadeDefault,
+                  fontFamily: 'Times New Roman',
+                  fontSize: 11
+                ),
+              ),
+            ],
+            defaultRenderer: charts.ArcRendererConfig(
+              arcWidth: 100,
+              arcRendererDecorators: [
+                charts.ArcLabelDecorator(
+                  labelPosition: charts.ArcLabelPosition.inside
+                )
+              ]
+            ),
+          ))
+        ],),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: Colors.indigo,
+          onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context) => DetailResult(result: widget.result,)));
+          },
+          label: const Text('Xem chi tiết',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'Times New Roman'),)),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
+}
+
+class TinhCach{
+  String ten;
+  int diem;
+  Color color;
+  TinhCach(this.ten,this.diem,this.color);
 }

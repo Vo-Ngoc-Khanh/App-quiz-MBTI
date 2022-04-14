@@ -588,14 +588,7 @@ class _QuestionPageState extends State<QuestionPage> {
   String result4 = '';
   String result = '';
   
-  var E = 0;
-  var I = 0;
-  var S = 0;
-  var N = 0;
-  var T = 0;
-  var F = 0;
-  var J = 0;
-  var P = 0;
+  int E = 0;int I = 0;int S = 0;int N = 0;int T = 0;int F = 0;int J = 0;int P = 0;
 
   void _chooseAnswer(String choose, bool click) {
     if (click == false) {
@@ -673,7 +666,7 @@ class _QuestionPageState extends State<QuestionPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Trắc nghiệm MBTI'),
+        title: const Text('Trắc nghiệm MBTI',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman')),
         leading: IconButton(
             onPressed: () {
               showAlertDialog(context);
@@ -682,14 +675,14 @@ class _QuestionPageState extends State<QuestionPage> {
         actions: [
           Row(
             children: [
-              const Text('Câu : ', style: TextStyle(fontSize: 18,),),
+              const Text('Câu : ', style: TextStyle(fontSize: 16,fontFamily: 'Times New Roman'),),
               Text('$indexAnwser',
                 style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.yellow),
               ),
-              const Text('/5', style: TextStyle(fontSize: 18,),),
+              const Text('/20', style: TextStyle(fontSize: 18,fontFamily: 'Times New Roman'),),
               const SizedBox(width: 50,),
             ],
           )
@@ -705,7 +698,7 @@ class _QuestionPageState extends State<QuestionPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 10,),
-                  Text(questions[index]['questionText'] as String,style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text(questions[index]['questionText'] as String,style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w900,fontFamily: 'Times New Roman')),
                   const SizedBox(height: 5,),
                   ...(questions[index]['answerText'] as List<Map<String, dynamic>>).map((answer) {
                     return _RadioButton(
@@ -716,7 +709,7 @@ class _QuestionPageState extends State<QuestionPage> {
                           setState(() {
                             if (send[index]['click'] == false) {indexAnwser++;}
                             send[index]['group'] = newValue!;
-                             _chooseAnswer(answer['case'] as String, send[index]['click'] as bool);
+                            _chooseAnswer(answer['case'] as String, send[index]['click'] as bool);
                             send[index]['click'] = true;
                           });
                         });
@@ -725,16 +718,16 @@ class _QuestionPageState extends State<QuestionPage> {
               ),
             );
           },
-          itemCount: 5,//questions.length,
+          itemCount:20,// questions.length,
           separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 5 ? true : false,
+        visible: indexAnwser == 20 ? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,
-              MaterialPageRoute(builder: (context) => ResultPage(result: resultQuiz())),
+              MaterialPageRoute(builder: (context) => ResultPage(resultQuiz(),E*2,I*2,S,N,T,F,J,P)),
               (Route<dynamic> route) => false,
             );
           },
@@ -756,7 +749,7 @@ class _QuestionPageState extends State<QuestionPage> {
       onChanged: onChanged,
       title: Text(
         title,
-        style: const TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 14,height: 1.5,fontFamily: 'Times New Roman'),
       ),
     );
   }
