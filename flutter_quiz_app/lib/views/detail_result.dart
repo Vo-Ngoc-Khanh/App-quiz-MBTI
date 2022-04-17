@@ -6,6 +6,7 @@ import 'package:fluttter_quiz_app/detail%20result/tongquan.dart';
 import 'package:fluttter_quiz_app/detail%20result/uunhuocdiem.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
 import 'package:fluttter_quiz_app/widgets/icon.dart';
+import 'package:fluttter_quiz_app/widgets/text.dart';
 
 
 class DetailResult extends StatefulWidget {
@@ -24,8 +25,7 @@ class _DetailResultState extends State<DetailResult> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: general,
-          title:Text( 'Xem chi tiết tính cách ${widget.result}',style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),
-          ),
+          title:textAppBar( 'Xem chi tiết tính cách ${widget.result}',),
           titleSpacing: 0,
           elevation: 20, 
           bottom: const TabBar(

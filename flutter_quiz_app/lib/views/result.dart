@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/views/detail_result.dart';
+import 'package:fluttter_quiz_app/views/saveuser.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
+import '../model/save.dart';
+import '../widgets/text.dart';
 import 'home.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -40,18 +43,20 @@ class _ResultPageState extends State<ResultPage> {
       )
      );
   }
+  
+  
+
   @override
   void initState() {
     super.initState();
     _getData();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Kết quả',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman')),
+        title:  textAppBar('Kết quả'),
         leading: IconButton(
             onPressed: () {
               Navigator.pushAndRemoveUntil(
@@ -63,17 +68,24 @@ class _ResultPageState extends State<ResultPage> {
             icon: const Icon(Icons.arrow_back)),
         actions: [
           IconButton(
-            icon: const Icon(Icons.download_rounded),
-            tooltip: 'Lưu về máy',
+            icon: const Icon(Icons.save),
+            tooltip: 'Lưu kết quả',
             onPressed: () {
-              // handle the press
+              setState(() {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (context)=>const SaveNewResult()))
+                .then((value) {
+                  setState(() {
+                    if(value!=null) addItem(Save(name: value, result: widget.result));
+                  });
+                });
+              });
             },
           ),
           IconButton(
             icon: const Icon(Icons.share),
             tooltip: 'Chia sẻ',
             onPressed: () {
-              // handle the press
             },
           ),
         ],
@@ -81,11 +93,11 @@ class _ResultPageState extends State<ResultPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
-          Text('Tính cách của bạn thuộc nhóm ${widget.result}',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+          textBold('Tính cách của bạn thuộc nhóm ${widget.result}'),
           Expanded(child: charts.PieChart(
             _seriesPieData,
             animate: true,
-            animationDuration: const Duration(seconds: 5),
+            animationDuration: const Duration(seconds: 3),
             behaviors: [
               charts.DatumLegend(
                 outsideJustification: charts.OutsideJustification.endDrawArea,
@@ -111,11 +123,11 @@ class _ResultPageState extends State<ResultPage> {
         ],),
       ),
       floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Colors.indigo,
+          backgroundColor: general,
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => DetailResult(result: widget.result,)));
           },
-          label: const Text('Xem chi tiết',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'Times New Roman'),)),
+          label: textButton('Xem chi tiết')),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

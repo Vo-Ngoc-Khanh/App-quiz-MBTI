@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const HomePage()));
     });
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(children: [
           const SizedBox(height: 200,),
-          Image.asset('assets/images/logo.png',
+          Image.asset('assets/images/splash.png',
             height: 200,
             width: 200,
           ),

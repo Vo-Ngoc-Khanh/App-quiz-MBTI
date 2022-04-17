@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/views/alertdialog.dart';
 import 'package:fluttter_quiz_app/views/result.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
+import 'package:fluttter_quiz_app/widgets/sizedbox.dart';
+
+import '../widgets/text.dart';
 
 class QuestionPage extends StatefulWidget {
   const QuestionPage({Key? key}) : super(key: key);
@@ -666,7 +669,7 @@ class _QuestionPageState extends State<QuestionPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Trắc nghiệm MBTI',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman')),
+        title: textAppBar('Trắc nghiệm MBTI'),
         leading: IconButton(
             onPressed: () {
               showAlertDialog(context);
@@ -682,7 +685,7 @@ class _QuestionPageState extends State<QuestionPage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.yellow),
               ),
-              const Text('/20', style: TextStyle(fontSize: 18,fontFamily: 'Times New Roman'),),
+              const Text('/70', style: TextStyle(fontSize: 18,fontFamily: 'Times New Roman'),),
               const SizedBox(width: 50,),
             ],
           )
@@ -697,9 +700,9 @@ class _QuestionPageState extends State<QuestionPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 10,),
-                  Text(questions[index]['questionText'] as String,style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w900,fontFamily: 'Times New Roman')),
-                  const SizedBox(height: 5,),
+                  sizedBoxh10(),
+                  textBold(questions[index]['questionText'] as String),
+                  sizedBoxh5(),
                   ...(questions[index]['answerText'] as List<Map<String, dynamic>>).map((answer) {
                     return _RadioButton(
                         title: answer['text'],
@@ -718,12 +721,12 @@ class _QuestionPageState extends State<QuestionPage> {
               ),
             );
           },
-          itemCount:20,// questions.length,
+          itemCount: questions.length,
           separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 20 ? true : false,
+        visible: indexAnwser == 70? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,
@@ -747,10 +750,7 @@ class _QuestionPageState extends State<QuestionPage> {
       value: value,
       groupValue: group,
       onChanged: onChanged,
-      title: Text(
-        title,
-        style: const TextStyle(fontSize: 14,height: 1.5,fontFamily: 'Times New Roman'),
-      ),
+      title: textGuide(title),
     );
   }
 }

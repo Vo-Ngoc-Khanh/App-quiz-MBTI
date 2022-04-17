@@ -137,10 +137,10 @@ class UuDiemNhuocDiem extends StatelessWidget {
             return SingleChildScrollView(
               child: Column(
                 children:  [
-                  const Text('Ưu điểm',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),),
+                  textBold('Ưu điểm của tính cách $result'),
                   TextDetail(uudiemnhuocdiem[getResult]['uudiem'] as String),
                   const SizedBoxDetail(),
-                  const Text('Nhược điểm',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),),
+                  textBold('Nhược điểm của tính cách $result'),
                   TextDetail(uudiemnhuocdiem[getResult]['nhuocdiem'] as String),
                 ],
               ));

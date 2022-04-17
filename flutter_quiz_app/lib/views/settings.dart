@@ -4,6 +4,7 @@ import 'package:fluttter_quiz_app/widgets/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../widgets/text.dart';
 import '../widgets/theme.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: general,
-        title: const Text('Cài đặt chung',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman')),
+        title:  textAppBar('Cài đặt chung'),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
@@ -46,7 +47,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("Đổi giao diện",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,fontFamily: 'Times New Roman'),),
+                textBold("Đổi giao diện"),
                 Transform.scale(
                     scale: 0.7,
                     child: CupertinoSwitch(
@@ -65,7 +66,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-                const Text("Ngôn ngữ", style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,fontFamily: 'Times New Roman'),),
+                textBold("Ngôn ngữ"),
                 IconButton (
                     icon: Image.asset("assets/images/ngonnguvn.png"),
                     onPressed: () {}
@@ -75,12 +76,11 @@ class _SettingsPageState extends State<SettingsPage> {
             const Divider(height: 10,thickness: 2,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const[
-                 Text("Phiên bản", style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,fontFamily: 'Times New Roman'),),
-                 Text("1.0.0", style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,fontFamily: 'Times New Roman'),),
+              children: [
+                 textBold("Phiên bản"),
+                 textBold("1.0.0"),
               ],
-            ),
-            
+            ), 
           ],
         ),
       ),

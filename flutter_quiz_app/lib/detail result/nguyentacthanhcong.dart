@@ -137,13 +137,13 @@ class NguyenTacThanhCong extends StatelessWidget {
             return SingleChildScrollView(
               child: Column(
                 children:  [
-                  const Text('Điểm mạnh trong công việc',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),),
+                  textBold('Điểm mạnh trong công việc'),
                   TextDetail(nguyentac[getResult]['diemmanh'] as String),
                   const SizedBoxDetail(),
-                  const Text('Điểm yếu trong công việc',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),),
+                  textBold('Điểm yếu trong công việc'),
                   TextDetail(nguyentac[getResult]['diemyeu'] as String),
                   const SizedBoxDetail(), 
-                  const Text('Nguyên tắc chung',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),),
+                  textBold('Nguyên tắc chung'),
                   TextDetail(nguyentac[getResult]['nguyentacthanhcong'] as String),
                 ],
               ));

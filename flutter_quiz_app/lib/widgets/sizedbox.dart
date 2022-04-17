@@ -9,3 +9,10 @@ class SizedBoxDetail extends StatelessWidget {
     return const SizedBox(height: 15,);
   }
 }
+
+Widget sizedBoxh10(){
+  return const SizedBox(height: 10,);
+}
+Widget sizedBoxh5(){
+  return const SizedBox(height: 5,);
+}

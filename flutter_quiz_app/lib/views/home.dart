@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/views/drawer.dart';
 import 'package:fluttter_quiz_app/views/settings.dart';
+import 'package:fluttter_quiz_app/widgets/text.dart';
 import 'guide.dart';
 import 'package:url_launcher/url_launcher.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -63,31 +65,15 @@ class _HomePageState extends State<HomePage> {
      'url' : 'https://www.topcv.vn/mbti/nhom-tinh-cach-istp.html'
     },
   ];
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-          child: ListView(
-            children: const [
-              ListTile(
-                title: Text('Võ Ngọc Khánh'),
-                subtitle: Text('Nhóm trưởng'),
-              ),
-              ListTile(
-                title: Text('Lê Sĩ Khang'),
-                subtitle: Text('Thành viên'),
-              ),
-              ListTile(
-                title: Text('Nguyễn Phước Tuấn'),
-                subtitle: Text('Thành viên'),
-              ),
-            ],
-          ),
-        ),
+      drawer: const Drawer(
+        child:BuildDrawer()
+      ),
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: const Text('Trắc nghiệm MBTI',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),),
+        title: textAppBar('Trắc nghiệm MBTI'),
         actions: [
           IconButton(
             onPressed: () {
@@ -99,56 +85,57 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
-          height: 400,
-          padding: const EdgeInsets.only(left: 32),
-          child : Swiper(
-            itemCount:listimg.length,
-            itemWidth: MediaQuery.of(context).size.width-2*64,
-            layout: SwiperLayout.STACK,
-            pagination: const SwiperPagination(
-              builder: DotSwiperPaginationBuilder(
-                activeSize: 15,
-                activeColor: Colors.blue,
-                color: Colors.blueGrey,
-              )),
-            itemBuilder: (context,index){
-              return Stack(
-                children: [
-                  Image.asset(listimg[index]['img'] as String),
-                  Column(
-                    children: [
-                      const SizedBox( height: 250,),
-                      Card(
-                      elevation: 8,//shadow of card widget
-                      color: Colors.cyanAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                          Text(listimg[index]['name'] as String, style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 18,color: Colors.black,fontFamily: 'Times New Roman'),),
-                          Text(listimg[index]['text'] as String, style: const TextStyle( fontWeight: FontWeight.w500, fontSize: 14,color: Colors.black,fontFamily: 'Times New Roman'),),
-                          const SizedBox(height: 20,),
-                          InkWell(
-                            child: Row(children: const [
-                              Text('Xem thêm ', style: TextStyle( fontFamily: 'Times New Roman', fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
-                              Icon(Icons.arrow_forward, size: 10,color: Colors.black,)
-                            ],),
-                            onTap: () async{
-                              if (!await launch(listimg[index]['url'] as String)) throw 'Could not launch ${listimg[index]['url'] as String}';
-                            }
-                          )
-                        ]),
+        child: Center(
+          child: Container(
+            height: 400,
+            padding: const EdgeInsets.only(left: 32),
+            child : Swiper(
+              itemCount:listimg.length,
+              itemWidth: MediaQuery.of(context).size.width-2*64,
+              layout: SwiperLayout.STACK,
+              pagination: const SwiperPagination(
+                builder: DotSwiperPaginationBuilder(
+                  activeSize: 15,
+                  activeColor: Colors.blue,
+                  color: Colors.blueGrey,
+                )),
+              itemBuilder: (context,index){
+                return Stack(
+                  children: [
+                    Image.asset(listimg[index]['img'] as String),
+                    Column(
+                      children: [
+                        const SizedBox( height: 220,),
+                        Card(
+                        elevation: 8,//shadow of card widget
+                        color: Colors.cyanAccent,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                            Text(listimg[index]['name'] as String, style: const TextStyle( fontWeight: FontWeight.bold, fontSize: 18,color: Colors.black,fontFamily: 'Times New Roman'),),
+                            Text(listimg[index]['text'] as String, style: const TextStyle( fontWeight: FontWeight.w500, fontSize: 14,color: Colors.black,fontFamily: 'Times New Roman'),),
+                            const SizedBox(height: 20,),
+                            InkWell(
+                              child: Row(children: const [
+                                Text('Xem thêm ', style: TextStyle( fontFamily: 'Times New Roman', fontSize: 10,color: Colors.black),textAlign: TextAlign.right),
+                                Icon(Icons.arrow_forward, size: 10,color: Colors.black,)
+                              ],),
+                              onTap: () async{
+                                if (!await launch(listimg[index]['url'] as String)) throw 'Could not launch ${listimg[index]['url'] as String}';
+                              }
+                            )
+                          ]),
+                        ),
                       ),
+                      ],
                     ),
-                    ],
-                  ),
-                  
-                ],
-              );
-            },
-            )
+                  ],
+                );
+              },
+              )
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -156,8 +143,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => const GuidePage()));
           },
-          label: const Text('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',
-          style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'Times New Roman')),),
+          label: textButton('KHÁM PHÁ TÍNH CÁCH CỦA BẠN NGAY',)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
