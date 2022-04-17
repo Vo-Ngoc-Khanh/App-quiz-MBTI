@@ -1,11 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/widgets/sizedbox.dart';
-import 'package:fluttter_quiz_app/widgets/text.dart';
-
-class UuDiemNhuocDiem extends StatelessWidget {
-  UuDiemNhuocDiem({ Key? key, required this.result }) : super(key: key);
-  final String result;
-
   final uudiemnhuocdiem = [
     {
       'tinhcach':'ENFJ',
@@ -88,65 +80,3 @@ class UuDiemNhuocDiem extends StatelessWidget {
       'nhuocdiem' :'- Không dễ đồng điệu với cảm xúc của người khác, đôi lúc họ có thể vô tâm vô ý.\n- Có xu hướng trở nên quá kín đáo và hay thu mình lại.\n- Sống hoàn toàn ở hiện tại, khó có những cam kết lâu dài.\n- Không giỏi thể hiện cảm xúc.\n- Khao khát hành động và sôi nổi, và có thể khuấy động mọi thứ chỉ để tạo ra chúng.\n- Cần rất nhiều không gian riêng và không muốn chúng bị xâm phạm.',
     },
   ];
-
-  int get getResult{
-    int id;
-    if (result =="ENFJ") {
-      id = 0;
-    } else if (result =="ENFP") {
-      id = 1;
-    } else if (result =="ENTJ") {
-      id =2;
-    } else if (result =="ENTP") {
-      id = 3;
-    } else if (result =="ESFJ") {
-      id = 4;
-    }else if (result =="ESFP") {
-      id = 5;
-    } else if (result =="ESTJ") {
-      id = 6;
-    } else if (result =="ESTP") {
-      id = 7;
-    } else if (result =="INFJ") {
-      id = 8;
-    } else if (result =="INFP") {
-      id = 9;
-    } else if (result =="INTJ") {
-      id = 10;
-    } else if (result =="INTP ") {
-      id = 11;
-    } else if (result =="ISFJ") {
-      id = 12;
-    }else if (result =="ISFP ") {
-      id = 13;
-    } else if (result =="ISTJ") {
-      id = 14;
-    }else {
-      id = 15;
-    }
-    return id;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding:const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: 1,
-          itemBuilder: (BuildContext context,_) {  
-            return SingleChildScrollView(
-              child: Column(
-                children:  [
-                  textBold('Ưu điểm của tính cách $result'),
-                  TextDetail(uudiemnhuocdiem[getResult]['uudiem'] as String),
-                  const SizedBoxDetail(),
-                  textBold('Nhược điểm của tính cách $result'),
-                  TextDetail(uudiemnhuocdiem[getResult]['nhuocdiem'] as String),
-                ],
-              ));
-          },
-          
-        ),
-    );
-  }
-}

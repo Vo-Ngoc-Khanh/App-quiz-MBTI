@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_quiz_app/detail%20result/moiquanhe.dart';
-import 'package:fluttter_quiz_app/detail%20result/nguyentacthanhcong.dart';
-import 'package:fluttter_quiz_app/detail%20result/sunghiep.dart';
-import 'package:fluttter_quiz_app/detail%20result/tongquan.dart';
-import 'package:fluttter_quiz_app/detail%20result/uunhuocdiem.dart';
-import 'package:fluttter_quiz_app/widgets/colors.dart';
-import 'package:fluttter_quiz_app/widgets/icon.dart';
-import 'package:fluttter_quiz_app/widgets/text.dart';
+import '../widgets/colors.dart';
+import '../widgets/icon.dart';
+import '../widgets/text.dart';
+import 'result_detail/moiquanhe.dart';
+import 'result_detail/nguyentacthanhcong.dart';
+import 'result_detail/sunghiep.dart';
+import 'result_detail/tongquan.dart';
+import 'result_detail/uunhuocdiem.dart';
+
 
 
 class DetailResult extends StatefulWidget {
