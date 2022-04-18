@@ -6,7 +6,10 @@ import '../widgets/text.dart';
 import 'guide.dart';
 import 'package:url_launcher/url_launcher.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:flutter_swiper/flutter_swiper.dart'; // cách fix : flutter run --no-sound-null-safety
+import 'package:flutter_swiper/flutter_swiper.dart'; 
+
+// cách run : flutter run --no-sound-null-safety, 
+//cách xuất apk flutter build apk --release --no-sound-null-safety
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

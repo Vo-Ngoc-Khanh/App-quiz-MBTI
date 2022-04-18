@@ -10,8 +10,7 @@ class SaveNewResult extends StatefulWidget {
 }
 
 class _SaveNewResult extends State<SaveNewResult> {
-  // ignore: non_constant_identifier_names
-  TextEditingController TextController = TextEditingController();
+  TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +21,17 @@ class _SaveNewResult extends State<SaveNewResult> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              controller: TextController,
+              controller: textController,
+              style: const TextStyle( fontWeight: FontWeight.w300, fontSize: 18, fontFamily: 'Times New Roman'),
+              decoration: const InputDecoration(
+                hintText: 'Nhập tên của bạn',
+                label: Text('Name')
+              ),
             ),
             ElevatedButton(
               onPressed: (){
-                if(TextController.text.isNotEmpty){
-                  Navigator.of(context).pop(TextController.text);
+                if(textController.text.isNotEmpty){
+                  Navigator.of(context).pop(textController.text);
                 }
               }, 
               child: const Text('Save'))
