@@ -15,16 +15,90 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  int indexAnwser = 0;
+  late int indexAnwser, E, I, S, N, T, F, J, P;
 
-
-  String result1 = '';
-  String result2 = '';
-  String result3 = '';
-  String result4 = '';
-  String result = '';
+  late String result1, result2, result3, result4;
   
-  int E = 0;int I = 0;int S = 0;int N = 0;int T = 0;int F = 0;int J = 0;int P = 0;
+  var send = [
+  {'group': '1', 'click': false},
+  {'group': '2', 'click': false},
+  {'group': '3', 'click': false},
+  {'group': '4', 'click': false},
+  {'group': '5', 'click': false},
+  {'group': '6', 'click': false},
+  {'group': '7', 'click': false},
+  {'group': '8', 'click': false},
+  {'group': '9', 'click': false},
+  {'group': '10', 'click': false},
+  {'group': '11', 'click': false},
+  {'group': '12', 'click': false},
+  {'group': '13', 'click': false},
+  {'group': '14', 'click': false},
+  {'group': '15', 'click': false},
+  {'group': '16', 'click': false},
+  {'group': '17', 'click': false},
+  {'group': '18', 'click': false},
+  {'group': '19', 'click': false},
+  {'group': '20', 'click': false},
+  {'group': '21', 'click': false},
+  {'group': '22', 'click': false},
+  {'group': '23', 'click': false},
+  {'group': '24', 'click': false},
+  {'group': '25', 'click': false},
+  {'group': '26', 'click': false},
+  {'group': '27', 'click': false},
+  {'group': '28', 'click': false},
+  {'group': '29', 'click': false},
+  {'group': '30', 'click': false},
+  {'group': '31', 'click': false},
+  {'group': '32', 'click': false},
+  {'group': '33', 'click': false},
+  {'group': '34', 'click': false},
+  {'group': '35', 'click': false},
+  {'group': '36', 'click': false},
+  {'group': '37', 'click': false},
+  {'group': '38', 'click': false},
+  {'group': '39', 'click': false},
+  {'group': '40', 'click': false},
+  {'group': '41', 'click': false},
+  {'group': '42', 'click': false},
+  {'group': '43', 'click': false},
+  {'group': '44', 'click': false},
+  {'group': '45', 'click': false},
+  {'group': '46', 'click': false},
+  {'group': '47', 'click': false},
+  {'group': '48', 'click': false},
+  {'group': '49', 'click': false},
+  {'group': '50', 'click': false},
+  {'group': '51', 'click': false},
+  {'group': '52', 'click': false},
+  {'group': '53', 'click': false},
+  {'group': '54', 'click': false},
+  {'group': '55', 'click': false},
+  {'group': '56', 'click': false},
+  {'group': '57', 'click': false},
+  {'group': '58', 'click': false},
+  {'group': '59', 'click': false},
+  {'group': '60', 'click': false},
+  {'group': '61', 'click': false},
+  {'group': '62', 'click': false},
+  {'group': '63', 'click': false},
+  {'group': '64', 'click': false},
+  {'group': '65', 'click': false},
+  {'group': '66', 'click': false},
+  {'group': '67', 'click': false},
+  {'group': '68', 'click': false},
+  {'group': '69', 'click': false},
+  {'group': '70', 'click': false},
+];
+
+  @override
+  void initState() {
+    indexAnwser = 0;
+    E =  I = S = N =  T =  F =  J =  P = 0;
+    result1 = result2 = result3 = result4 = '';
+    super.initState();
+  }
 
   void _chooseAnswer(String choose, bool click) {
     if (click == false) {
@@ -73,6 +147,7 @@ class _QuestionPageState extends State<QuestionPage> {
       }
     }
   }
+  
   String resultQuiz() {
     if (E >= I) {
       result1 = 'E';
@@ -94,9 +169,9 @@ class _QuestionPageState extends State<QuestionPage> {
     } else if (J < P) {
       result4 = 'P';
     }
-    result =  result1 + result2 + result3 +result4;
-    return result;
+    return result1 + result2 + result3 +result4;
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,7 +231,7 @@ class _QuestionPageState extends State<QuestionPage> {
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 70? true : false,
+        visible: indexAnwser == 70 ? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,

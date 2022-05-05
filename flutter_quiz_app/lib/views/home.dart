@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_swiper/flutter_swiper.dart'; 
 
 // cách run : flutter run --no-sound-null-safety, 
-//cách xuất apk flutter build apk --release --no-sound-null-safety
+//cách xuất apk : flutter build apk --release --no-sound-null-safety
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

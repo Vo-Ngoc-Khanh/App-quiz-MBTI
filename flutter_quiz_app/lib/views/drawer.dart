@@ -61,7 +61,8 @@ class _BuildDrawerState extends State<BuildDrawer> {
             )
           ),
         ),
-        list.isNotEmpty ? SizedBox(
+        list.isNotEmpty ? Container(
+          alignment:Alignment.center,
           height: double.maxFinite,
           child:  ListView.builder(
               itemCount: list.length,
