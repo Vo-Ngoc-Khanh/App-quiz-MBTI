@@ -63,6 +63,9 @@ class GuidePage extends StatelessWidget {
                     },
                     label: const Text("QUAY LẠI"),
                     icon: const Icon(Icons.arrow_back),
+                    style:ElevatedButton.styleFrom(
+                      primary: general
+                    )
                   ),
                   ElevatedButton.icon(
                     onPressed: () {
@@ -73,7 +76,9 @@ class GuidePage extends StatelessWidget {
                     },    
                     label: const Text("BẮT ĐẦU"),
                     icon: const Icon(Icons.arrow_forward),
-                    
+                    style:ElevatedButton.styleFrom(
+                      primary: general
+                    )
                   ),
                 ],
               ),

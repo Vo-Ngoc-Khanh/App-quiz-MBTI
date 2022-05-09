@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-Color general = Colors.indigo;
+Color general = const Color(0xFFAC1818);

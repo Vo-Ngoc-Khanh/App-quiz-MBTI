@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../model/json/homejson.dart';
 import '../views/drawer.dart';
 import '../views/settings.dart';
+import '../widgets/colors.dart';
 import '../widgets/text.dart';
 import 'guide.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         child:BuildDrawer()
       ),
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: general,
         title: textAppBar('Trắc nghiệm MBTI'),
         actions: [
           IconButton(
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox( height: 220,),
                         Card(
                         elevation: 8,//shadow of card widget
-                        color: Colors.cyanAccent,
+                        color: const Color(0xff677fdc),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Colors.indigo,
+          backgroundColor: general,
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => const GuidePage()));
           },
