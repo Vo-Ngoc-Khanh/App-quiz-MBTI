@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/views/chart/radarchart.dart';
 import '../views/alertdialog.dart';
-import '../views/result.dart';
+//import '../views/result.dart';
 import '../widgets/colors.dart';
 import '../widgets/sizedbox.dart';
 import '../model/json/questionjson.dart';
@@ -15,7 +16,7 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  late int indexAnwser, E, I, S, N, T, F, J, P;
+  late double indexAnwser, E, I, S, N, T, F, J, P;
 
   late String result1, result2, result3, result4;
   
@@ -200,7 +201,7 @@ class _QuestionPageState extends State<QuestionPage> {
         child: ListView.separated(
           scrollDirection: Axis.vertical,
           separatorBuilder: (BuildContext context, int index) => const Divider(),
-          itemCount: 5,//questions.length,
+          itemCount: 1,//questions.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -231,11 +232,11 @@ class _QuestionPageState extends State<QuestionPage> {
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 5 ? true : false,
+        visible: indexAnwser == 1? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,
-              MaterialPageRoute(builder: (context) => ResultPage(resultQuiz(),E*2,I*2,S,N,T,F,J,P)),
+              MaterialPageRoute(builder: (context) => RadarChart(resultQuiz(),E*2,I*2,S,N,T,F,J,P)),
               (Route<dynamic> route) => false,
             );
           },

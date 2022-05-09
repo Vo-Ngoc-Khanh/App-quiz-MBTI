@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/widgets/colors.dart';
 import 'package:fluttter_quiz_app/widgets/text.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -56,8 +57,8 @@ class _BuildDrawerState extends State<BuildDrawer> {
                 }, icon: const Icon(Icons.save,color: Colors.white,))
               ],
             ),
-            decoration: const BoxDecoration(
-              color: Colors.indigo,
+            decoration: BoxDecoration(
+              color: general,
             )
           ),
         ),
