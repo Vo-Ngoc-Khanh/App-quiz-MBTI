@@ -67,19 +67,21 @@ class GuidePage extends StatelessWidget {
                       primary: general
                     )
                   ),
-                  ElevatedButton.icon(
+                  ElevatedButton(
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(context,
                         MaterialPageRoute(builder: (context) => const QuestionPage()),
                         (Route<dynamic> route) => false,
                       );
-                    },    
-                    label: const Text("BẮT ĐẦU"),
-                    icon: const Icon(Icons.arrow_forward),
+                     },
+                    child: Row(children: const[
+                      Text("BẮT ĐẦU "),
+                      Icon(Icons.arrow_forward),
+                    ]),
                     style:ElevatedButton.styleFrom(
                       primary: general
                     )
-                  ),
+                  )
                 ],
               ),
             ),

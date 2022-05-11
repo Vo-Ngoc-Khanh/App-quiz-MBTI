@@ -16,8 +16,8 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  late double indexAnwser, E, I, S, N, T, F, J, P;
-
+  late double  E, I, S, N, T, F, J, P;
+  late int indexAnwser;
   late String result1, result2, result3, result4;
   
   var send = [

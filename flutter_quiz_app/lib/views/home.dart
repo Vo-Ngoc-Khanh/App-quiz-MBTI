@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox( height: 220,),
                         Card(
                         elevation: 8,//shadow of card widget
-                        color: const Color(0xff677fdc),
+                        color: const Color.fromARGB(255, 157, 173, 238),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttter_quiz_app/views/detail_result.dart';
 import 'package:fluttter_quiz_app/views/saveuser.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
-import '../model/save.dart';
-import '../widgets/text.dart';
-import 'home.dart';
+import '../../model/save.dart';
+import '../../widgets/text.dart';
+import '../home.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
 class ResultPage extends StatefulWidget {
@@ -65,7 +65,8 @@ class _ResultPageState extends State<ResultPage> {
                     (Route<dynamic> route) => false,
               );
             },
-            icon: const Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.save),

@@ -96,8 +96,12 @@ class _BuildDrawerState extends State<BuildDrawer> {
               )
         ):Container(
           alignment: Alignment.center,
-          height: 400,
-          child: Center(child: textBold('Chưa lưu kết quả nào',))),
+          height: 500,
+          child: SizedBox(
+            height: 100,
+            child: textBold('Chưa lưu kết quả nào',)
+            )
+        ),
       ],
     );
   }

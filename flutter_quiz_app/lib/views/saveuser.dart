@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/colors.dart';
 import '../widgets/text.dart';
 
 class SaveNewResult extends StatefulWidget {
@@ -14,7 +15,7 @@ class _SaveNewResult extends State<SaveNewResult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: textAppBar('Lưu kết quả trắc nghiệm'),),
+      appBar: AppBar(title: textAppBar('Lưu kết quả trắc nghiệm'),backgroundColor: general,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/widgets/colors.dart';
+import 'package:fluttter_quiz_app/widgets/sizedbox.dart';
 import 'package:lottie/lottie.dart';
 import 'home.dart';
 
@@ -15,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const HomePage()));
     });
@@ -24,15 +26,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(children: [
-          const SizedBox(height: 200,),
-          Image.asset('assets/images/splash.png',
-            height: 200,
-            width: 200,
-          ),
-          Lottie.asset('assets/jsonImages/loading.json',height: 100, width: 100),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: double.infinity,
+        color: general,
+        child: Container(
+          color: Colors.white,
+          height: 300,
+          width: 300,
+          child: 
+            Image.asset('assets/images/splash.png',
+              height: 300,
+              width: 300,
+            ),
+        ),
       ),
     );
   }
