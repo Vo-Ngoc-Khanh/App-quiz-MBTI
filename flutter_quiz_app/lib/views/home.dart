@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: general,
-        title: textAppBar('Trắc nghiệm MBTI'),
+        title: textAppBar('Trắc nghiệm tính cách'),
         actions: [
           IconButton(
             onPressed: () {

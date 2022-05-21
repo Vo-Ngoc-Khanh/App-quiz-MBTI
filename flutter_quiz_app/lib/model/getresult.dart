@@ -35,3 +35,22 @@ int getResult(String result){
     }
     return id;
 }
+
+
+int getResultJohnHolland(String result){
+    int id;
+    if (result =="R") {
+      id = 0;
+    } else if (result =="I") {
+      id = 1;
+    } else if (result =="A") {
+      id =2;
+    } else if (result =="S") {
+      id = 3;
+    } else if (result =="E") {
+      id = 4;
+    }else {
+      id = 5;
+    } 
+    return id;
+}

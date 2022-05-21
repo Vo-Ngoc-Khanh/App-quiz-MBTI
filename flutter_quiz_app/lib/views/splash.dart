@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fluttter_quiz_app/views/quiz%20john%20holland/guide.dart';
 import 'package:fluttter_quiz_app/widgets/colors.dart';
-import 'package:fluttter_quiz_app/widgets/sizedbox.dart';
-import 'package:lottie/lottie.dart';
-import 'home.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomePage()));
+          MaterialPageRoute(builder: (context) => const GuideJohnHolland()));
     });
   }
 

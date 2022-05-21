@@ -201,7 +201,7 @@ class _QuestionPageState extends State<QuestionPage> {
         child: ListView.separated(
           scrollDirection: Axis.vertical,
           separatorBuilder: (BuildContext context, int index) => const Divider(),
-          itemCount: 1,//questions.length,
+          itemCount: questions.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -232,7 +232,7 @@ class _QuestionPageState extends State<QuestionPage> {
         ),
       ),
       floatingActionButton: Visibility(
-        visible: indexAnwser == 1? true : false,
+        visible: indexAnwser == 70? true : false,
         child: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushAndRemoveUntil(context,
